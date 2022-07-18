@@ -18,4 +18,4 @@ FROM nginx:1.17.8-alpine
 COPY --from=build /app/build /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx/nginx.conf /nginx.conf.template
-CMD /bin/sh -c "envsubst < /nginx.conf.template > /etc/nginx/conf.d/nginx.conf" ; ls -la ;cat /etc/nginx/conf.d/nginx.conf && nginx -g 'daemon off;'
+CMD /bin/sh -c "envsubst < /nginx.conf.template > /etc/nginx/conf.d/default.conf" ; nginx -g 'daemon off;'
