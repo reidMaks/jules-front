@@ -62,7 +62,7 @@ class Game extends React.Component {
     }
 
     fetch_question() {
-        fetch("http://localhost:5000/question")
+        fetch(`${process.env.REACT_APP_BACKEND_HOST}question`)
             .then(res => res.json())
             .then(
                 (result) => {
